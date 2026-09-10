@@ -69,6 +69,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        platform: {
+          ps5: "hsl(var(--platform-ps5))",
+          xbox: "hsl(var(--platform-xbox))",
+          pc: "hsl(var(--platform-pc))",
+        },
         severity: {
           critical: "hsl(var(--severity-critical))",
           high: "hsl(var(--severity-high))",
