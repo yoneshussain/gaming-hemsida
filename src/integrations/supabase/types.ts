@@ -304,6 +304,173 @@ export type Database = {
         }
         Relationships: []
       }
+      order_items: {
+        Row: {
+          created_at: string
+          format: string
+          id: string
+          line_total_minor: number
+          order_id: string
+          platform: string
+          quantity: number
+          sku: string
+          title: string
+          unit_price_minor: number
+        }
+        Insert: {
+          created_at?: string
+          format: string
+          id?: string
+          line_total_minor: number
+          order_id: string
+          platform: string
+          quantity: number
+          sku: string
+          title: string
+          unit_price_minor: number
+        }
+        Update: {
+          created_at?: string
+          format?: string
+          id?: string
+          line_total_minor?: number
+          order_id?: string
+          platform?: string
+          quantity?: number
+          sku?: string
+          title?: string
+          unit_price_minor?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_items_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      orders: {
+        Row: {
+          city: string | null
+          country: string
+          created_at: string
+          currency: string
+          customer_email: string
+          customer_name: string
+          id: string
+          idempotency_key: string
+          order_reference: string
+          phone: string | null
+          postal_code: string | null
+          requires_shipping: boolean
+          shipping_minor: number
+          status: string
+          street_address: string | null
+          subtotal_minor: number
+          total_minor: number
+        }
+        Insert: {
+          city?: string | null
+          country?: string
+          created_at?: string
+          currency?: string
+          customer_email: string
+          customer_name: string
+          id?: string
+          idempotency_key: string
+          order_reference: string
+          phone?: string | null
+          postal_code?: string | null
+          requires_shipping?: boolean
+          shipping_minor?: number
+          status?: string
+          street_address?: string | null
+          subtotal_minor: number
+          total_minor: number
+        }
+        Update: {
+          city?: string | null
+          country?: string
+          created_at?: string
+          currency?: string
+          customer_email?: string
+          customer_name?: string
+          id?: string
+          idempotency_key?: string
+          order_reference?: string
+          phone?: string | null
+          postal_code?: string | null
+          requires_shipping?: boolean
+          shipping_minor?: number
+          status?: string
+          street_address?: string | null
+          subtotal_minor?: number
+          total_minor?: number
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          available: boolean
+          compatibility: string
+          created_at: string
+          currency: string
+          delivery_note: string
+          description: string
+          featured: boolean
+          format: string
+          genre: string
+          image_key: string
+          max_per_order: number
+          platform: string
+          price_minor: number
+          sku: string
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          available?: boolean
+          compatibility?: string
+          created_at?: string
+          currency?: string
+          delivery_note?: string
+          description?: string
+          featured?: boolean
+          format: string
+          genre: string
+          image_key?: string
+          max_per_order?: number
+          platform: string
+          price_minor: number
+          sku: string
+          sort_order?: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          available?: boolean
+          compatibility?: string
+          created_at?: string
+          currency?: string
+          delivery_note?: string
+          description?: string
+          featured?: boolean
+          format?: string
+          genre?: string
+          image_key?: string
+          max_per_order?: number
+          platform?: string
+          price_minor?: number
+          sku?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
